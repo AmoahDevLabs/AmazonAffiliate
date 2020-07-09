@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Stási Mart</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  {% include 'nav.html' %}
+
+
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('{% static 'images/001.jpeg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Get on the Train</h3>
+            <p>Buy what you want with love.</p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static 'images/002.jpg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Get on the Train</h3>
+            <p>Buy what you want with love.</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static 'images/003.jpeg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Get on the Train</h3>
+            <p>Buy what you want with love.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+
+   <!-- Page Content -->
+  <div class="container">
+
+    <!-- Portfolio Section -->
+    <h2 class="my-4">Stási Mart</h2>
+
+    <div class="row">
+        {% for product in products %}
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="{{ product.product_url }}"><img class="card-img-top" src="{{ product.image.url }}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="{{ product.product_url }}">{{ product.name }}</a>
+            </h4>
+            <p class="card-text">
+              {{ product.description }}
+             </p>
+            <a href="{{ product.product_url }}" class="btn btn-secondary">${{ product.price }}</a>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+    <!-- /.row -->
+
+    <!-- Features Section -->
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Stási Mart Deals</h2>
+        <script type="text/javascript">amzn_assoc_ad_type = "smart";
+          amzn_assoc_ad_mode = "search";
+          amzn_assoc_tracking_id =
+              "amoahsoft-20";
+          amzn_assoc_title = "Shop Related Products";
+          amzn_assoc_default_category = "All";
+          amzn_assoc_search_bar = "true";
+          amzn_assoc_search_bar_position = "bottom";
+          amzn_assoc_default_search_phrase = "Laptops";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_placement = "adunit0";
+          amzn_assoc_region = "US";</script>
+          <script type="text/javascript"
+                  src="//ws-na.amazon-adsystem.com/widgets/onejs?acw=true&MarketPlace=US"></script>
+      </div>
+      <div class="col-lg-6">
+          <script type="text/javascript">amzn_assoc_ad_type = "smart";
+          amzn_assoc_ad_mode = "search";
+          amzn_assoc_tracking_id =
+              "amoahsoft-20";
+          amzn_assoc_title = "Shop Related Products";
+          amzn_assoc_default_category = "All";
+          amzn_assoc_search_bar = "true";
+          amzn_assoc_search_bar_position = "bottom";
+          amzn_assoc_default_search_phrase = "Laptops";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_placement = "adunit0";
+          amzn_assoc_region = "US";</script>
+          <script type="text/javascript"
+                  src="//ws-na.amazon-adsystem.com/widgets/onejs?acw=true&MarketPlace=US"></script>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Stási Mart</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>
